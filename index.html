@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="scroll-smooth font-sans">
   <head>
+    <!--npm run watch-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
@@ -30,46 +31,22 @@
         <div class="w-fit p-4">
           <ul class="top-0 flex flex-row p-0 text-[3vh] font-medium">
             <li>
-              <a
-                href="#sec-1"
-                class="block px-5 text-white hover:text-[#FFF200]"
-                >Home</a
-              >
+              <a href="#sec-1" class="input-btn">Home</a>
             </li>
             <li>
-              <a
-                href="#sec-2"
-                class="block px-5 text-white hover:text-[#FFF200]"
-                >Attività</a
-              >
+              <a href="#sec-2" class="input-btn">Attività</a>
             </li>
             <li>
-              <a
-                href="#sec-3"
-                class="block px-5 text-white hover:text-[#FFF200]"
-                >Orari</a
-              >
+              <a href="#sec-3" class="input-btn">Orari</a>
             </li>
             <li>
-              <a
-                href="#sec-4"
-                class="block px-5 text-white hover:text-[#FFF200]"
-                >Mappa</a
-              >
+              <a href="#sec-4" class="input-btn">Mappa</a>
             </li>
             <li>
-              <a
-                href="#sec-5"
-                class="block px-5 text-white hover:text-[#FFF200]"
-                >Bacheca</a
-              >
+              <a href="#sec-5" class="input-btn">Bacheca</a>
             </li>
             <li>
-              <a
-                href="#sec-6"
-                class="block px-5 text-white hover:text-[#FFF200]"
-                >Registro</a
-              >
+              <a href="#sec-6" class="input-btn italic">Info</a>
             </li>
           </ul>
         </div>
@@ -319,6 +296,53 @@
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="sec-6"
+      class="relative min-h-screen w-full"
+      style="background-image: url(img/what-the-hex.png)"
+    >
+      <div class="absolute h-1/3 w-full bg-blue-950 shadow-2xl">
+        <div
+          class="absolute left-[50%] top-[55%] float-left h-fit w-full translate-x-[-50%] translate-y-[-50%]"
+        >
+          <img src="img/logodeca.png" class="w-[30%]" />
+
+          <div
+            class="absolute bottom-0 left-[50%] translate-x-[-50%] text-[5.5vw] text-white"
+          >
+            <p class="italic">info</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-0 h-2/3 w-full">
+        <div
+          class="absolute left-[25%] top-[5%] h-[90%] w-[35%] translate-x-[-25%] overflow-y-scroll"
+        >
+          <img
+            src="documents/registro_coni.png"
+            class="absolute left-[50%] w-full translate-x-[-50%]"
+          />
+        </div>
+        <div
+          class="absolute right-[25%] top-[50%] translate-x-[25%] translate-y-[-50%] rounded-xl bg-slate-400 hover:cursor-pointer"
+          onclick="window.location.href = 'https://www.decasport.it/decasport/privacy/privacy.pdf';"
+        >
+          <div class="relative h-4/5 w-full">
+            <img
+              class="h-[16vh] w-[25vh] border"
+              src="icons/icons-minimal/document.svg"
+            />
+          </div>
+          <div
+            class="relative flex h-1/5 w-full items-center justify-center text-[4vh] font-bold text-white"
+          >
+            <p>Info Privacy</p>
+          </div>
         </div>
       </div>
     </section>

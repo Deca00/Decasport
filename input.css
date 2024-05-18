@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.input-btn{
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+}
+
+.input-btn:hover{
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #FFF200;
+}
