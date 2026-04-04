@@ -1,16 +1,80 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Setup Tailwind</title>
-  <link href="./output.css" rel="stylesheet">
-</head>
-<body class="bg-slate-900 flex items-center justify-center h-screen">
+<!doctype html>
+<html lang="it" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decasport | One Page</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
 
-  <h1 class="text-4xl font-bold text-emerald-400">
-    Tailwind aasa! 🎉
-  </h1>
+  <body class="bg-slate-50 font-sans text-slate-800">
+    <nav class="fixed top-0 z-50 w-full bg-white shadow-md">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+        <a href="#home" class="text-2xl font-black tracking-wider text-emerald-600 uppercase"> Decasport </a>
 
-</body>
+        <div class="hidden space-x-8 font-semibold md:flex">
+          <a href="#home" class="transition-colors hover:text-emerald-500">Home</a>
+          <a href="#chi-siamo" class="transition-colors hover:text-emerald-500">Chi Siamo</a>
+          <a href="#servizi" class="transition-colors hover:text-emerald-500">Servizi</a>
+          <a
+            href="#contatti"
+            class="rounded-md bg-emerald-600 px-4 py-2 text-white transition-colors hover:bg-emerald-700"
+            >Contattaci</a
+          >
+        </div>
+
+        <button id="mobile-menu-btn" class="focus:outline-none md:hidden">
+          <svg class="h-8 w-8 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden flex-col space-y-4 border-t border-slate-100 bg-white px-4 pt-2 pb-6 shadow-lg md:hidden">
+        <a href="#home" class="mobile-link block text-lg font-medium hover:text-emerald-500">Home</a>
+        <a href="#chi-siamo" class="mobile-link block text-lg font-medium hover:text-emerald-500">Chi Siamo</a>
+        <a href="#servizi" class="mobile-link block text-lg font-medium hover:text-emerald-500">Servizi</a>
+        <a href="#contatti" class="mobile-link block text-lg font-medium text-emerald-600">Contattaci</a>
+      </div>
+    </nav>
+
+    <main class="pt-20">
+      <section id="home" class="flex min-h-screen items-center justify-center bg-slate-100 px-4">
+        <div class="text-center">
+          <h1 class="mb-6 text-5xl font-bold text-slate-900 md:text-7xl">Benvenuto in Decasport</h1>
+          <p class="mx-auto max-w-2xl text-xl text-slate-600">
+            La tua avventura inizia qui. Scorri verso il basso per scoprire cosa offriamo.
+          </p>
+        </div>
+      </section>
+
+      <section id="chi-siamo" class="flex min-h-screen items-center justify-center bg-white px-4">
+        <div class="mx-auto max-w-4xl text-center">
+          <h2 class="mb-6 text-4xl font-bold text-emerald-600">Chi Siamo</h2>
+          <p class="text-lg text-slate-600">
+            Siamo un team di appassionati dedicati a fornire la migliore esperienza sportiva...
+          </p>
+        </div>
+      </section>
+
+      <section id="servizi" class="flex min-h-screen items-center justify-center bg-slate-100 px-4">
+        <div class="mx-auto max-w-4xl text-center">
+          <h2 class="mb-6 text-4xl font-bold text-emerald-600">I Nostri Servizi</h2>
+          <p class="text-lg text-slate-600">
+            Offriamo allenamenti personalizzati, consulenze e attrezzature all'avanguardia.
+          </p>
+        </div>
+      </section>
+
+      <section id="contatti" class="flex min-h-screen items-center justify-center bg-slate-900 px-4">
+        <div class="mx-auto max-w-4xl text-center text-white">
+          <h2 class="mb-6 text-4xl font-bold text-emerald-400">Contattaci</h2>
+          <p class="text-lg text-slate-300">Pronto a iniziare? Scrivici un'email o passa a trovarci.</p>
+        </div>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
 </html>
