@@ -3,75 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Decasport | One Page</title>
+    <title>Decasport</title>
     <link href="./output.css" rel="stylesheet" />
   </head>
 
-  <body class="bg-slate-50 font-sans text-slate-800">
-    <nav class="fixed top-0 z-50 w-full bg-white shadow-md">
-      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <a href="#home" class="text-2xl font-black tracking-wider text-emerald-600 uppercase"> Decasport </a>
+  <body class="bg-[#0D0D0D] p-4 text-white">
+    <div class="fixed top-4 left-0 z-50 w-full px-4">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between rounded-xl bg-[#1a1a1a] p-4">
+        <div class="flex items-center">
+          <button id="mobile-menu-btn" class="text-white focus:outline-none md:hidden">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
 
-        <div class="hidden space-x-8 font-semibold md:flex">
-          <a href="#home" class="transition-colors hover:text-emerald-500">Home</a>
-          <a href="#chi-siamo" class="transition-colors hover:text-emerald-500">Chi Siamo</a>
-          <a href="#servizi" class="transition-colors hover:text-emerald-500">Servizi</a>
-          <a
-            href="#contatti"
-            class="rounded-md bg-emerald-600 px-4 py-2 text-white transition-colors hover:bg-emerald-700"
-            >Contattaci</a
-          >
+          <div class="hidden space-x-8 text-xl font-semibold text-white md:flex md:pl-4">
+            <a href="#home" class="transition-colors hover:text-[#1a1aff]">Home</a>
+            <a href="#attivita" class="transition-colors hover:text-[#1a1aff]">Attività</a>
+            <a href="#orari" class="transition-colors hover:text-[#1a1aff]">Orari</a>
+            <a href="#mappa" class="transition-colors hover:text-[#1a1aff]">Mappa</a>
+          </div>
         </div>
 
-        <button id="mobile-menu-btn" class="focus:outline-none md:hidden">
-          <svg class="h-8 w-8 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
+        <div class="flex items-center space-x-6 pr-2">
+          <a href="https://www.instagram.com/decasport1/" class="text-white transition-colors hover:text-pink-600">
+            <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.20 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/p/DECASPORT-100057372501562/" class="text-white transition-colors hover:text-blue-600">
+            <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V1.875C17.16 1.812 16.16 1.5 15 1.5c-3.125 0-5 1.875-5 5v3H7.5v4H10V22.5h4V13.5z" />
+            </svg>
+          </a>
+        </div>
+      </nav>
 
       <div
         id="mobile-menu"
-        class="hidden flex-col space-y-4 border-t border-slate-100 bg-white px-4 pt-2 pb-6 shadow-lg md:hidden">
-        <a href="#home" class="mobile-link block text-lg font-medium hover:text-emerald-500">Home</a>
-        <a href="#chi-siamo" class="mobile-link block text-lg font-medium hover:text-emerald-500">Chi Siamo</a>
-        <a href="#servizi" class="mobile-link block text-lg font-medium hover:text-emerald-500">Servizi</a>
-        <a href="#contatti" class="mobile-link block text-lg font-medium text-emerald-600">Contattaci</a>
+        class="mx-auto mt-2 hidden max-w-6xl flex-col items-center space-y-4 rounded-2xl bg-[#1a1a1a] p-4 md:hidden">
+        <a href="#home" class="mobile-link text-lg text-white transition-colors hover:text-[#1a1aff]">Home</a>
+        <a href="#attivita" class="mobile-link text-lg text-white transition-colors hover:text-[#1a1aff]">Attività</a>
+        <a href="#orari" class="mobile-link text-lg text-white transition-colors hover:text-[#1a1aff]">Orari</a>
+        <a href="#mappa" class="mobile-link text-lg text-white transition-colors hover:text-[#1a1aff]">Mappa</a>
       </div>
-    </nav>
+    </div>
 
-    <main class="pt-20">
-      <section id="home" class="flex min-h-screen items-center justify-center bg-slate-100 px-4">
-        <div class="text-center">
-          <h1 class="mb-6 text-5xl font-bold text-slate-900 md:text-7xl">Benvenuto in Decasport</h1>
-          <p class="mx-auto max-w-2xl text-xl text-slate-600">
-            La tua avventura inizia qui. Scorri verso il basso per scoprire cosa offriamo.
-          </p>
+    <main>
+      <section id="home" class="flex h-dvh items-center justify-center bg-[#0D0D0D]">
+        <div class="mx-auto max-w-xl text-center">
+          <h1 class="text-5xl font-bold text-white">Home</h1>
         </div>
       </section>
 
-      <section id="chi-siamo" class="flex min-h-screen items-center justify-center bg-white px-4">
-        <div class="mx-auto max-w-4xl text-center">
-          <h2 class="mb-6 text-4xl font-bold text-emerald-600">Chi Siamo</h2>
-          <p class="text-lg text-slate-600">
-            Siamo un team di appassionati dedicati a fornire la migliore esperienza sportiva...
-          </p>
+      <section id="attivita" class="flex h-dvh items-center justify-center bg-red-950">
+        <div class="mx-auto max-w-xl text-center">
+          <h1 class="text-5xl font-bold text-white">Attività</h1>
         </div>
       </section>
 
-      <section id="servizi" class="flex min-h-screen items-center justify-center bg-slate-100 px-4">
-        <div class="mx-auto max-w-4xl text-center">
-          <h2 class="mb-6 text-4xl font-bold text-emerald-600">I Nostri Servizi</h2>
-          <p class="text-lg text-slate-600">
-            Offriamo allenamenti personalizzati, consulenze e attrezzature all'avanguardia.
-          </p>
+      <section id="orari" class="flex h-dvh items-center justify-center bg-orange-950">
+        <div class="mx-auto max-w-xl text-center">
+          <h1 class="text-5xl font-bold text-white">Orari</h1>
         </div>
       </section>
 
-      <section id="contatti" class="flex min-h-screen items-center justify-center bg-slate-900 px-4">
-        <div class="mx-auto max-w-4xl text-center text-white">
-          <h2 class="mb-6 text-4xl font-bold text-emerald-400">Contattaci</h2>
-          <p class="text-lg text-slate-300">Pronto a iniziare? Scrivici un'email o passa a trovarci.</p>
+      <section id="mappa" class="flex h-dvh items-center justify-center bg-amber-950">
+        <div class="mx-auto max-w-xl text-center">
+          <h1 class="text-5xl font-bold text-white">Mappa</h1>
         </div>
       </section>
     </main>
