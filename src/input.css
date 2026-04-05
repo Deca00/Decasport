@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+/* Insegniamo a Tailwind il font di Google */
+@theme {
+  /* Questo crea la classe "font-russo" */
+  --font-russo: "Russo One", sans-serif;
+}
