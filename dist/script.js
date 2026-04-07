@@ -1,5 +1,6 @@
 // La "cornice" magica: aspetta che tutto l'HTML sia caricato prima di partire!
 document.addEventListener("DOMContentLoaded", () => {
+  
   // ==========================================
   // --- GESTIONE MENU MOBILE ---
   // ==========================================
@@ -7,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const menu = document.getElementById("mobile-menu");
   const links = document.querySelectorAll(".mobile-link");
 
-  // Il "salvagente": procedi solo se trovi il bottone e il menu nella pagina
   if (btn && menu) {
     // Apri/Chiudi il menu cliccando sull'hamburger
     btn.addEventListener("click", () => {
@@ -25,64 +25,62 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // --- GESTIONE MODALE JUDO ---
+  // --- FUNZIONE PER GESTIRE I MODALI SPORT ---
   // ==========================================
-  const btnJudo = document.getElementById("btn-judo");
-  const modalJudo = document.getElementById("modal-judo");
-  const closeJudo = document.getElementById("close-judo");
+  function setupModal(sportName) {
+    const btn = document.getElementById(`btn-${sportName}`);
+    const modal = document.getElementById(`modal-${sportName}`);
+    const close = document.getElementById(`close-${sportName}`);
 
-  if (btnJudo && modalJudo && closeJudo) {
-    // Apri modale quando clicchi sulla foto del Judo
-    btnJudo.addEventListener("click", () => {
-      modalJudo.classList.remove("hidden");
-    });
+    const tabOrari = document.getElementById(`btn-tab-orari-${sportName}`);
+    const tabPrezzi = document.getElementById(`btn-tab-prezzi-${sportName}`);
+    const contentOrari = document.getElementById(`content-orari-${sportName}`);
+    const contentPrezzi = document.getElementById(`content-prezzi-${sportName}`);
 
-    // Chiudi modale quando clicchi sulla 'X'
-    closeJudo.addEventListener("click", () => {
-      modalJudo.classList.add("hidden");
-    });
+    // 1. Apri/Chiudi Modale
+    if (btn && modal && close) {
+      btn.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+      });
 
-    // Chiudi modale se clicchi fuori dalla scatola (sullo sfondo scuro)
-    modalJudo.addEventListener("click", (e) => {
-      if (e.target === modalJudo) {
-        modalJudo.classList.add("hidden");
-      }
-    });
+      close.addEventListener("click", () => {
+        modal.classList.remove("flex");
+        modal.classList.add("hidden");
+      });
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("flex");
+          modal.classList.add("hidden");
+        }
+      });
+    }
+
+    // 2. Cambia Schede (Tabs)
+    if (tabOrari && tabPrezzi && contentOrari && contentPrezzi) {
+      tabOrari.addEventListener("click", () => {
+        contentOrari.classList.remove("hidden");
+        contentPrezzi.classList.add("hidden");
+        tabOrari.className = "rounded-xl bg-sky-500 px-6 py-2 font-russo tracking-wide text-white shadow-[0_0_15px_rgba(56,189,248,0.4)] transition-all";
+        tabPrezzi.className = "rounded-xl bg-white/10 px-6 py-2 font-russo tracking-wide text-white transition-all hover:bg-white/20";
+      });
+
+      tabPrezzi.addEventListener("click", () => {
+        contentPrezzi.classList.remove("hidden");
+        contentOrari.classList.add("hidden");
+        tabPrezzi.className = "rounded-xl bg-sky-500 px-6 py-2 font-russo tracking-wide text-white shadow-[0_0_15px_rgba(56,189,248,0.4)] transition-all";
+        tabOrari.className = "rounded-xl bg-white/10 px-6 py-2 font-russo tracking-wide text-white transition-all hover:bg-white/20";
+      });
+    }
   }
 
   // ==========================================
-  // --- GESTIONE TABS (Orari / Prezzi) JUDO ---
+  // --- ATTIVIAMO TUTTI I MODALI! ---
   // ==========================================
-  const btnTabOrariJudo = document.getElementById("btn-tab-orari-judo");
-  const btnTabPrezziJudo = document.getElementById("btn-tab-prezzi-judo");
-  const contentOrariJudo = document.getElementById("content-orari-judo");
-  const contentPrezziJudo = document.getElementById("content-prezzi-judo");
+  setupModal("judo"); 
+  setupModal("kick");
+  setupModal("kungfu");
+  setupModal("ginnastica");
 
-  if (btnTabOrariJudo && btnTabPrezziJudo) {
-    // Cosa succede se clicchi su ORARI
-    btnTabOrariJudo.addEventListener("click", () => {
-      // 1. Mostro gli orari e nascondo i prezzi
-      contentOrariJudo.classList.remove("hidden");
-      contentPrezziJudo.classList.add("hidden");
-
-      // 2. Accendo il bottone orari (azzurro) e spengo i prezzi (grigio)
-      btnTabOrariJudo.className =
-        "rounded-xl bg-sky-500 px-6 py-2 font-russo tracking-wide text-white shadow-[0_0_15px_rgba(56,189,248,0.4)] transition-all";
-      btnTabPrezziJudo.className =
-        "rounded-xl bg-white/10 px-6 py-2 font-russo tracking-wide text-white transition-all hover:bg-white/20";
-    });
-
-    // Cosa succede se clicchi su PREZZI
-    btnTabPrezziJudo.addEventListener("click", () => {
-      // 1. Mostro i prezzi e nascondo gli orari
-      contentPrezziJudo.classList.remove("hidden");
-      contentOrariJudo.classList.add("hidden");
-
-      // 2. Accendo il bottone prezzi (azzurro) e spengo gli orari (grigio)
-      btnTabPrezziJudo.className =
-        "rounded-xl bg-sky-500 px-6 py-2 font-russo tracking-wide text-white shadow-[0_0_15px_rgba(56,189,248,0.4)] transition-all";
-      btnTabOrariJudo.className =
-        "rounded-xl bg-white/10 px-6 py-2 font-russo tracking-wide text-white transition-all hover:bg-white/20";
-    });
-  }
 }); // Fine della "cornice" magica

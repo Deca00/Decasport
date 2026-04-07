@@ -4,4 +4,5 @@
 @theme {
   /* Questo crea la classe "font-russo" */
   --font-russo: "Russo One", sans-serif;
+  --z-index-100: 100;
 }
